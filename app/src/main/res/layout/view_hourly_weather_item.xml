@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModal"
+            type="company.info.com.weather.viewmodel.WeatherHistoryItemViewModal"/>
+
+        <variable
+            name="viewModalHistory"
+            type="company.info.com.weather.viewmodel.WeatherHistoryViewModel"/>
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/view_foreground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/city_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@={viewModal.cityName}"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/city_name_separator"
+            app:layout_constraintHorizontal_bias="0.2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="City Name"/>
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/weather_icon"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:src="@{viewModal.icon}"
+            app:layout_constraintBottom_toBottomOf="@id/city_name"
+            app:layout_constraintEnd_toEndOf="@id/separator"
+            app:layout_constraintHorizontal_bias=".9"
+            app:layout_constraintStart_toStartOf="@id/city_name_separator"
+            app:layout_constraintTop_toTopOf="@id/city_name"
+            />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/weather_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="20dp"
+            android:text="@={viewModal.weatherDesc}"
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="@id/separator"
+            app:layout_constraintHorizontal_bias=".12"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/city_name"
+            tools:text="Weather Description"/>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/date_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@={viewModal.date}"
+            android:textColor="@color/colorPrimary"
+            android:textSize="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias=".9"
+            app:layout_constraintStart_toEndOf="@+id/weather_desc"
+            app:layout_constraintTop_toTopOf="@+id/weather_desc"
+            tools:text="12-Aug-2018"/>
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/delete_icon"
+            android:layout_width="@dimen/ic_delete"
+            android:layout_height="@dimen/ic_delete"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="240dp"
+            android:onClick="@{()->viewModalHistory.removeItem()}"
+            android:src="@drawable/ic_delete_white_24dp"
+            app:layout_constraintBottom_toTopOf="@id/date_info"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.99"
+            app:layout_constraintStart_toEndOf="@+id/city_name"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/faq_line"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="4dp"
+            android:background="@color/colorDarkGrey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/date_info"/>
+
+        <android.support.constraint.Guideline
+            android:id="@+id/separator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".6"/>
+
+        <android.support.constraint.Guideline
+            android:id="@+id/city_name_separator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".25"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

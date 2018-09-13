@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModal"
+            type="company.info.com.weather.viewmodel.WeatherDetailViewModel"/>
+
+    </data>
+
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="company.info.com.weather.activity.WeatherDetailActivity">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:gravity="center"
+            android:text="Weather Details"
+            android:textSize="20dp"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorPrimary"
+            app:layout_constraintTop_toBottomOf="@+id/textView"/>
+
+        <TextView
+            android:id="@+id/staticCityName"
+
+            android:layout_width="148dp"
+            android:layout_height="21dp"
+            android:layout_margin="20dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="City"
+            android:textSize="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line"/>
+
+        <TextView
+            android:id="@+id/CityName"
+            android:layout_width="178dp"
+            android:layout_height="21dp"
+            android:layout_margin="20dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="@={viewModal.cityName}"
+            android:textSize="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/staticCityName"
+            app:layout_constraintTop_toBottomOf="@+id/line"
+            />
+
+        <TextView
+            android:id="@+id/staticWeatherDesc"
+
+            android:layout_width="148dp"
+            android:layout_height="21dp"
+            android:layout_margin="20dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="64dp"
+            android:gravity="center"
+            android:text="Weather"
+            android:textSize="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/staticCityName"/>
+
+        <TextView
+            android:id="@+id/WeatherDesc"
+            android:layout_width="178dp"
+            android:layout_height="21dp"
+            android:layout_margin="20dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="@={viewModal.weatherDescription}"
+            android:textSize="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/staticWeatherDesc"
+            app:layout_constraintTop_toBottomOf="@+id/CityName"
+            />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

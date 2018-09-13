@@ -1,0 +1,26 @@
+package company.info.com.weatherlibs.models;
+
+/**
+ * Created by fordlabs on 13/08/18.
+ */
+
+public class Clouds
+{
+    private String all;
+
+    public String getAll ()
+    {
+        return all;
+    }
+
+    public void setAll (String all)
+    {
+        this.all = all;
+    }
+
+    @Override
+    public String toString()
+    {
+        return "ClassPojo [all = "+all+"]";
+    }
+}

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Weather</string>
+    <string name="loading_title">Loading</string>
+    <string name="loading_Message">Please wait</string>
+    <string name="action_settings">Settings</string>
+    <string name="delete">DELETE</string>
+    <string name="action_forward">prev history</string>
+    <string name="action_info">Info</string>
+    <string name="action_exit">Exit</string>
+</resources>
