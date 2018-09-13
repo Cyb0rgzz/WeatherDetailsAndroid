@@ -1,13 +1,10 @@
 package company.info.com.weather.viewmodel;
 
-import android.app.ProgressDialog;
 import android.arch.lifecycle.Lifecycle;
 import android.arch.lifecycle.LifecycleObserver;
 import android.arch.lifecycle.OnLifecycleEvent;
-import android.content.Context;
 import android.databinding.ObservableField;
 
-import company.info.com.weather.R;
 import company.info.com.weather.data.SharedData;
 
 public class WeatherDetailViewModel implements LifecycleObserver {
