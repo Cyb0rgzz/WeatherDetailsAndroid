@@ -7,15 +7,19 @@ import android.arch.lifecycle.OnLifecycleEvent;
 import android.content.Context;
 import android.content.Intent;
 import android.databinding.ObservableField;
+import android.graphics.Color;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Toast;
 
 import company.info.com.weather.R;
 import company.info.com.weather.activity.WeatherDetailActivity;
 import company.info.com.weather.activity.WeatherHistoryActivity;
 import company.info.com.weather.data.SharedData;
+import company.info.com.weather.viewmodel.adapter.WeatherAdapter;
 import company.info.com.weatherlibs.client.RestAPIClient;
 import company.info.com.weatherlibs.models.WeatherMaster;
 import company.info.com.weatherlibs.services.WeatherInterface;
@@ -31,6 +35,14 @@ public class MainViewModel implements LifecycleObserver {
     private String inputValue;
     private Context context;
     private ProgressDialog progress;
+    private String[] cities = {"Chennai", "Delhi", "Coimbatore", "Banglore", "Mumbai", "kolkata", "Cochin", "Goa"};
+    private ArrayAdapter<String> adapter = new ArrayAdapter<String>(context, android.R.layout.select_dialog_item, cities);
+
+    public ArrayAdapter getAdapter() {
+        return adapter;
+    }
+    public void showCityList(){
+    }
 
     public void showLoadingDialog() {
 
@@ -107,5 +119,6 @@ public class MainViewModel implements LifecycleObserver {
         SharedData.setCityData(weatherMaster.getName());
         SharedData.setWeatherDescription(weatherMaster.getWeather()[0].getDescription());
     }
+
 
 }
