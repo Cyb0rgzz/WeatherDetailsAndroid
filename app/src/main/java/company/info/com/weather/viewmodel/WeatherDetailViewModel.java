@@ -14,7 +14,6 @@ public class WeatherDetailViewModel implements LifecycleObserver {
 
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
     public void connectListener() {
-        System.out.println("==================Inside Vm");
         cityName.set(SharedData.getCityData());
         weatherDescription.set(SharedData.getWeatherDescription());
     }
