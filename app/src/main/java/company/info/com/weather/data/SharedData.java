@@ -4,11 +4,20 @@ import android.content.res.Resources;
 
 public class SharedData {
     private static String cityData;
+    private static String cityID;
     private static String weatherDescription;
     private static Resources resources;
 
     public static String getCityData() {
         return cityData;
+    }
+
+    public static String getCityId() {
+        return cityID;
+    }
+
+    public static void setCityId(String cityId) {
+        SharedData.cityID = cityId;
     }
 
     public static void setCityData(String cityData) {
