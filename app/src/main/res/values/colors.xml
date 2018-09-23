@@ -9,4 +9,5 @@
     <color name="bg_row_background">#fa315b</color>
     <color name="color_background_darkgrey">#535353</color>
     <color name="description">#a9a9a9</color>
+    <color name="color_light_grey">#A0A0A0</color>
 </resources>
